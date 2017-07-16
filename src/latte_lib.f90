@@ -219,8 +219,16 @@ CONTAINS
 
        BOX = 0.0d0
        BOX(1,1) = xhi(1) - xlo(1)
+       BOX(2,1) = XY
        BOX(2,2) = xhi(2) - xlo(2)
+       BOX(3,1) = XZ
+       BOX(3,2) = YZ
        BOX(3,3) = xhi(3) - xlo(3)
+
+       WRITE(*,*)"Lattice vectors"
+       WRITE(*,*)"a=",BOX(1,1),BOX(1,2),BOX(1,3)
+       WRITE(*,*)"b=",BOX(2,1),BOX(2,2),BOX(2,3)
+       WRITE(*,*)"c=",BOX(3,1),BOX(3,2),BOX(3,3)
 
        NATS = SIZE(CR_IN,DIM=2)
 
